@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FirstMVPApp.Models;
+using FirstMVPApp.Presenters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,12 @@ namespace FirstMVPApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Models.FirstMVPAppModel model = new Models.FirstMVPAppModel();
+            FirstMVPAppView view = new FirstMVPAppView();
+            FirstMVPAppPresenter presenter = new FirstMVPAppPresenter(model, view);
+
+            Application.Run(view);
         }
     }
 }
