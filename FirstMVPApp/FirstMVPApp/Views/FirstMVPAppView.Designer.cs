@@ -56,7 +56,7 @@
             this.textBoxOperand1.Name = "textBoxOperand1";
             this.textBoxOperand1.Size = new System.Drawing.Size(100, 20);
             this.textBoxOperand1.TabIndex = 1;
-            this.textBoxOperand1.TextChanged += new System.EventHandler(this.textBoxOperand1_TextChanged);
+            this.textBoxOperand1.Leave += new System.EventHandler(this.textBoxOperand1_Leave);
             // 
             // textBoxOperand2
             // 
@@ -64,7 +64,7 @@
             this.textBoxOperand2.Name = "textBoxOperand2";
             this.textBoxOperand2.Size = new System.Drawing.Size(100, 20);
             this.textBoxOperand2.TabIndex = 2;
-            this.textBoxOperand2.TextChanged += new System.EventHandler(this.textBoxOperand2_TextChanged);
+            this.textBoxOperand2.Leave += new System.EventHandler(this.textBoxOperand2_Leave);
             // 
             // textBoxResult
             // 

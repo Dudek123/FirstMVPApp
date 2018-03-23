@@ -20,31 +20,6 @@ namespace FirstMVPApp
             InitializeComponent();
         }
 
-        private void textBoxOperand1_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Presenter.OnOperand1Changed(Convert.ToDouble(textBoxOperand1.Text));
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Data error", "Invalid data", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
-
-        private void textBoxOperand2_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Presenter.OnOperand2Changed(Convert.ToDouble(textBoxOperand2.Text));
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Data error", "Invalid data", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Presenter.OnAddClicked();
@@ -71,6 +46,32 @@ namespace FirstMVPApp
         private void buttonDivide_Click(object sender, EventArgs e)
         {
             Presenter.OnDivideClicked();
+        }
+
+        private void textBoxOperand1_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Presenter.OnOperand1Changed(Convert.ToDouble(textBoxOperand1.Text));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Data error", "Invalid data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxOperand1.Text = "0";
+            }
+        }
+
+        private void textBoxOperand2_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Presenter.OnOperand2Changed(Convert.ToDouble(textBoxOperand2.Text));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Data error", "Invalid data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxOperand2.Text = "0";
+            }
         }
     }
 }

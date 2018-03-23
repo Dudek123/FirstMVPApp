@@ -33,7 +33,7 @@ namespace FirstMVPApp.Models
             if (Operand2 != 0)
                 Result = Operand1 / Operand2;
             else
-                System.Windows.Forms.MessageBox.Show("Data error", "Dividing by 0", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Dividing by 0", "Data Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
     }
 
